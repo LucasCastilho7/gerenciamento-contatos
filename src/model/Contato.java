@@ -51,4 +51,13 @@ public class Contato implements Comparable<Contato> {
     public int compareTo(Contato other) {
         return this.nome.compareTo(other.nome);
     }
+
+    @Override
+    public String toString() {
+        return "Contato{" +
+                "nome='" + nome + '\'' +
+                ", telefones=" + telefones +
+                ", email=" + email +
+                '}';
+    }
 }

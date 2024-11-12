@@ -63,22 +63,22 @@ public class GerenciadorContatos {
         return "Contato adicionado com sucesso.";
     }
 
-    public Contato buscarPorNome(String nome) {
+    public String buscarPorNome(String nome) {
         for (Contato contato : alphabeticalContatos.keySet()) {
             if (contato.getNome().equals(nome)) {
-                return contato;
+                return String.format("Contato encontrado: %s", contato);
             }
         }
         return null;
     }
 
-    public Contato buscarPorTelefone(String telefone) {
+    public String buscarPorTelefone(String telefone) {
         for (Contato contato : contatos) {
             if (contato.getTelefones().contains(telefone)) {
-                return contato;
+                return String.format("Contato encontrado: %s", contato);
             }
         }
-        return null;
+        return "Contato não encontrado.";
     }
 
     public List<Contato> listarTodosContatos() {
@@ -119,8 +119,8 @@ public class GerenciadorContatos {
 
         gerenciador.populateAlphabeticalContatos();
 
-        System.out.println(gerenciador.buscarPorNome("Alice"));
-        System.out.println(gerenciador.buscarPorNome("Eve"));
+        System.out.println(gerenciador.buscarPorNome("Lucas"));
+        System.out.println(gerenciador.buscarPorNome("Gabriele"));
 
         System.out.println(gerenciador.buscarPorTelefone("987654321"));
         System.out.println(gerenciador.buscarPorTelefone("111111111"));
